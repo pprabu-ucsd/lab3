@@ -3,7 +3,7 @@ import java.util.List;
 
 interface StringChecker { boolean checkString(String s); }
 
-class ListExamples {
+class ListExamples implements StringChecker {
 
   // Returns a new list that has all the elements of the input list for which
   // the StringChecker returns true, and not the elements that return false, in
@@ -18,6 +18,12 @@ class ListExamples {
     return result;
   }
 
+  public boolean checkString(String s) {
+    if(s.length() > 5) {
+      return false;
+    }
+    return true;
+  }
 
   // Takes two sorted list of strings (so "a" appears before "b" and so on),
   // and return a new list that has all the strings in both list in sorted order.
